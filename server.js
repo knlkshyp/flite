@@ -7,8 +7,9 @@ const express = require('express'),
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
-let dbconfig = fs.readFileSync('dbconfig.json', 'utf8');
-console.log(dbconfig[0].user);
+let json = fs.readFileSync('dbconfig.json', 'utf8');
+let dbconfig = JSON.parse(json);
+console.log(dbconfig.password);
 
 app.get('/', (req, res) => {
     app.use(express.static('public'));
