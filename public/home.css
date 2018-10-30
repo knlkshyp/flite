@@ -1,0 +1,99 @@
+.title {
+    color:#d45050;
+    font-family:arial;
+    text-align:center;
+    font-weight: 600;
+    font-size: 32px;
+    margin-top: 50px;
+}
+.flite-extraction-form {
+    margin-top: 50px;
+}
+.fields {
+    float: left;
+    margin-left: 80px;
+}
+.field {
+    font-family:arial;
+    margin-top: 30px;
+}
+
+.extraction-submit-button {
+    float: left;
+    margin-left: 80px;
+    margin-top: 20px;
+}
+.extraction-button {
+    border-radius: 20px;
+    background-color: #757575;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .extraction-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .extraction-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .extraction-button:hover span {
+    padding-right: 25px;
+  }
+  
+  .extraction-button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .drop-down {
+    margin-left: 340px;
+    margin-top: 30px; 
+  }
+
+  .text-field {
+    margin-left: 420px; 
+    margin-top: -20px;  
+  }
+
+  .validation-submit-button {
+    margin-left: 600px;
+    margin-top: -20px; 
+  }
+
+  .validation-expand-button {
+    margin-top: 20px;
+    margin-left: 306px;
+  }
+
+  table,th,td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  th,td {
+    text-align: left;
+    padding: 10px;
+  }
+
+  table {
+    width: 40%;
+    margin-top: 20px;
+    margin-left: 340px;
+  }

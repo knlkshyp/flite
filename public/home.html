@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="home.css">
+    </head>
+    <body>
+        <div class="title">
+            <span>fLite Data Extraction</span>
+        </div>
+        <div class="flite-extraction-form">
+            <form action="/extraction" method="post">
+                <div class="fields">
+                    <div class="field">
+                        <input type="checkbox" name="SelectAll">
+                        <span>Select All</span>
+                    </div>
+                    <div class="field">
+                        <input type="checkbox" name="Clients">
+                        <span>Clients</span>
+                    </div>
+                    <div class="field">
+                        <input type="checkbox" name="Contracts">
+                        <span>Contracts</span>
+                    </div>
+                    <div class="field">
+                        <input type="checkbox" name="Events">
+                        <span>Events</span>
+                    </div>
+                    <div class="field">
+                        <input type="checkbox" name="Fees">
+                        <span>Fees</span>
+                    </div>
+                    <div class="field">
+                        <input type="checkbox" name="Schedules">
+                        <span>Schedules</span>
+                    </div>
+                    <div class="field">
+                        <input type="checkbox" name="ExchangeRates">
+                        <span>Exchange Rates</span>
+                    </div>
+                    <div class="field">
+                        <input type="checkbox" name="CollateralLinkages">
+                        <span>Collateral Linkages</span>
+                    </div>
+                </div>
+                <div class="extraction-submit-button">
+                    <button class="extraction-button" type="submit">
+                        <span>Process & Share</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
