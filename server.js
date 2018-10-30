@@ -9,7 +9,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 let json = fs.readFileSync('dbconfig.json', 'utf8');
 let dbconfig = JSON.parse(json);
-console.log(dbconfig.password);
 
 app.get('/', (req, res) => {
     app.use(express.static('public'));
