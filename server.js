@@ -10,6 +10,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 let json = fs.readFileSync('dbconfig.json', 'utf8');
 let dbconfig = JSON.parse(json);
 
+function id () {
+    return (new Date().getFullYear().toString() + new Date().getMonth().toString() + new Date().getDay().toString() + new Date().getDate().toString() + new Date().getHours().toString() + new Date().getMinutes().toString() + new Date().getSeconds().toString() + new Date().getMilliseconds().toString());
+}
+
 app.get('/', (req, res) => {
     app.use(express.static('public'));
     res.sendFile(__dirname + '/public/home.html');
@@ -50,7 +54,7 @@ app.post('/extraction', (req, res) => {
                                             console.log(err);
                                         } else {
                                             let data = result.rows;
-                                            let ws = fs.createWriteStream('/flite_events.csv');
+                                            let ws = fs.createWriteStream('/flite_events_' + id() + '.csv');
                                             csv.write(data).pipe(ws);
                                         }
                                     });
@@ -69,7 +73,7 @@ app.post('/extraction', (req, res) => {
                                             console.log(err);
                                         } else {
                                             let data = result.rows;
-                                            let ws = fs.createWriteStream('/flite_fees.csv');
+                                            let ws = fs.createWriteStream('/flite_fees_' + id() + '.csv');
                                             csv.write(data).pipe(ws);
                                         }
                                     });
@@ -88,7 +92,7 @@ app.post('/extraction', (req, res) => {
                                             console.log(err);
                                         } else {
                                             let data = result.rows;
-                                            let ws = fs.createWriteStream('/flite_clients.csv');
+                                            let ws = fs.createWriteStream('/flite_clients_' + id() + '.csv');
                                             csv.write(data).pipe(ws);
                                         }
                                     });
@@ -107,7 +111,7 @@ app.post('/extraction', (req, res) => {
                                             console.log(err);
                                         } else {
                                             let data = result.rows;
-                                            let ws = fs.createWriteStream('/flite_schedules.csv');
+                                            let ws = fs.createWriteStream('/flite_schedules_' + id() + '.csv');
                                             csv.write(data).pipe(ws);
                                         }
                                     });
@@ -126,7 +130,7 @@ app.post('/extraction', (req, res) => {
                                             console.log(err);
                                         } else {
                                             let data = result.rows;
-                                            let ws = fs.createWriteStream('/flite_fxrates.csv');
+                                            let ws = fs.createWriteStream('/flite_fxrates_' + id() + '.csv');
                                             csv.write(data).pipe(ws);
                                         }
                                     });
@@ -145,7 +149,7 @@ app.post('/extraction', (req, res) => {
                                             console.log(err);
                                         } else {
                                             let data = result.rows;
-                                            let ws = fs.createWriteStream('/flite_collaterallinkages.csv');
+                                            let ws = fs.createWriteStream('/flite_collaterallinkages_' + id() + '.csv');
                                             csv.write(data).pipe(ws);
                                         }
                                     });
@@ -164,7 +168,7 @@ app.post('/extraction', (req, res) => {
                                             console.log(err);
                                         } else {
                                             let data = result.rows;
-                                            let ws = fs.createWriteStream('/flite_contracts.csv');
+                                            let ws = fs.createWriteStream('/flite_contracts_' + id() + '.csv');
                                             csv.write(data).pipe(ws);
                                         }
                                     });
@@ -204,7 +208,7 @@ app.post('/extraction', (req, res) => {
                                                 console.log(err);
                                             } else {
                                                 let data = result.rows;
-                                                let ws = fs.createWriteStream('/flite_events.csv');
+                                                let ws = fs.createWriteStream('/flite_events_' + id() + '.csv');
                                                 csv.write(data).pipe(ws);
                                             }
                                         });
@@ -240,7 +244,7 @@ app.post('/extraction', (req, res) => {
                                                 console.log(err);
                                             } else {
                                                 let data = result.rows;
-                                                let ws = fs.createWriteStream('/flite_fees.csv');
+                                                let ws = fs.createWriteStream('/flite_fees_' + id() + '.csv');
                                                 csv.write(data).pipe(ws);
                                             }
                                         });
@@ -276,7 +280,7 @@ app.post('/extraction', (req, res) => {
                                                 console.log(err);
                                             } else {
                                                 let data = result.rows;
-                                                let ws = fs.createWriteStream('/flite_clients.csv');
+                                                let ws = fs.createWriteStream('/flite_clients_' + id() + '.csv');
                                                 csv.write(data).pipe(ws);
                                             }
                                         });
@@ -312,7 +316,7 @@ app.post('/extraction', (req, res) => {
                                                 console.log(err);
                                             } else {
                                                 let data = result.rows;
-                                                let ws = fs.createWriteStream('/flite_contracts.csv');
+                                                let ws = fs.createWriteStream('/flite_contracts_' + id() + '.csv');
                                                 csv.write(data).pipe(ws);
                                             }
                                         });
@@ -348,7 +352,7 @@ app.post('/extraction', (req, res) => {
                                                 console.log(err);
                                             } else {
                                                 let data = result.rows;
-                                                let ws = fs.createWriteStream('/flite_schedules.csv');
+                                                let ws = fs.createWriteStream('/flite_schedules_' + id() + '.csv');
                                                 csv.write(data).pipe(ws);
                                             }
                                         });
@@ -384,7 +388,7 @@ app.post('/extraction', (req, res) => {
                                                 console.log(err);
                                             } else {
                                                 let data = result.rows;
-                                                let ws = fs.createWriteStream('/flite_fxrates.csv');
+                                                let ws = fs.createWriteStream('/flite_fxrates_' + id() + '.csv');
                                                 csv.write(data).pipe(ws);
                                             }
                                         });
@@ -420,7 +424,7 @@ app.post('/extraction', (req, res) => {
                                                 console.log(err);
                                             } else {
                                                 let data = result.rows;
-                                                let ws = fs.createWriteStream('/flite_collaterallinkages.csv');
+                                                let ws = fs.createWriteStream('/flite_collaterallinkages_' + id() + '.csv');
                                                 csv.write(data).pipe(ws);
                                             }
                                         });
